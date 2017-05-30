@@ -25,7 +25,7 @@
 		  
 		  // 最初の画面を表示した時の処理
 		  if (page == "list-page") {
-		    // レストラン取得ボタンを押した時の処理
+		    // 検索文字列が変更された時の処理
 		    $("#search").on("change", (e) => {
 		    		// 検索文字がなければ終了
 		        var search = e.target.value;
@@ -41,6 +41,7 @@
 		        }).done((results) => {
 		          
 		          // 処理が成功した場合
+		          $("#books").empty();
 		          books = results.Items;
 		          for (var i = 0; i < books.length; i++) {
 		            var book = books[i].Item;
